@@ -1,6 +1,6 @@
 /*Palidroma
 Chiedere all’utente di inserire una parola
-Creare una funzione per capire se la parola inserita è palindroma */
+Creare una funzione per capire se la parola inserita è palindroma 
 
 
 
@@ -26,7 +26,7 @@ if (isParolaPalindroma(userParola))
 } else{
     alert(`${userParola} NON  è una parola palindroma`)
 
-}
+} /*
 
 
 
@@ -37,7 +37,7 @@ if (isParolaPalindroma(userParola))
 
 
 
-Pari e Dispari
+/*Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 Sommiamo i due numeri
@@ -51,6 +51,15 @@ Domande da  farsi quando si crea una funzione:
 2. Ho bisogno di parametri?
 3. Devo restituire un valore?
 4. Se sì, di che tipo? */
+
+function askNumber (min, max message = `Dammi un numero`){
+    let userNumber = parseInt(prompt(message))
+    while (isNaN(userNumber)) || userNumber < min || userNumber > max{
+        userNumber =parseInt(prompt(`Valore non valido per favore `+ message))
+    }
+    return userNumber;
+}
+const userNumber =askNumber(1,5,`Dammi un numero da 1 a 5 `)
 
 
 
