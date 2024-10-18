@@ -52,21 +52,11 @@ Domande da  farsi quando si crea una funzione:
 3. Devo restituire un valore?
 4. Se sì, di che tipo? */
 
-function askNumber (min, max message = `Dammi un numero`){
-    let userNumber = parseInt(prompt(message))
-    while (isNaN(userNumber)) || userNumber < min || userNumber > max{
-        userNumber =parseInt(prompt(`Valore non valido per favore `+ message))
-    }
-    return userNumber;
+function askNumber(min, max, message = `Dammi un numero`) {
+  let userNumber = parseInt(prompt(message));
+  while (isNaN(userNumber) || userNumber < min || userNumber > max) {
+    userNumber = parseInt(prompt(`Valore non valido per favore ` + message));
+  }
+  return userNumber;
 }
-const userNumber =askNumber(1,5,`Dammi un numero da 1 a 5 `)
-
-
-
-
-
-
-
-
-
-
+const userNumber = askNumber(1, 5, `Dammi un numero da 1 a 5 `);
