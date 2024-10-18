@@ -59,4 +59,38 @@ function askNumber(min, max, message = `Dammi un numero`) {
   }
   return userNumber;
 }
+function askString(whitelist = [], message = `Dammi un testo`) {
+  let userString = prompt(message);
+
+  if (whitelist.length > 0) {
+    while (!whitelist.includes(userString)) {
+      userString = prompt(
+        `la parola deve essere inculsa nella whitelist` + whitelist
+      );
+    }
+  }
+  return userString;
+}
+function isNumberEven(num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function generateNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function isUserWinner(userNumber, opponentNumber, userChoice) {
+  const sum = userNumber + opponentNumber;
+  console.log(`userwon` + userWon);
+  return (
+    (userChoice === "pari" && isNumberEven()) ||
+    (userChoice === "dispari" && !isNumberEven())
+  );
+}
 const userNumber = askNumber(1, 5, `Dammi un numero da 1 a 5 `);
+const userChoice = askString([`pari,dispari`], `Dammi pari o dispari`);
+const pcNumber = generateNumber(1, 5);
+const userWon = isUserWinner(userNumber, pcNumber, userChoice);
